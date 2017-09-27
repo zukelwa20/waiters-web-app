@@ -11,7 +11,9 @@ module.exports = function(mongoUrl) {
 
 
     var waiterDays = mongoose.model('waitersDays', {
-        name: String
+        name: String,
+        days: Object
+
 
     });
 

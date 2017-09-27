@@ -2,11 +2,16 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const flash = require('express-flash');
+
+
 
 const model = require("./models");
+const models = model(process.env.MONGO_DB_URL ||"mongodb://localhost:27017/WaitersData");
+
 
 const waitersRoutes = require('./waiters');
-const waiterRoute = waitersRouts(models);
+const waiterRoute = waitersRoutes(models);
 
 var app = express();
 
@@ -37,10 +42,22 @@ app.engine('hbs', exphbs({
 
 app.set('view engine', 'hbs');
 
-app.get('/', function(req, res) {
-  var username = req.body.username
-    res.redirect("waiter/" + username);
-});
+app.get("/",function(req, res){
+  res.redirect('/waiter')
+ })
+
+// app.get("/waiter/:username", function(req, res) {
+//   var username = req.params.username
+//   console.log(username);
+//   res.render("wait")
+  // res.redirect("waiter/" + username);
+// });
+
+app.get("/waiter", waiterRoute.showForm)
+app.get("/waiter/:username", waiterRoute.waiter)
+app.post("/waiter/:username", waiterRoute.waiterFun)
+
+
 //app.get('/',)
 
 

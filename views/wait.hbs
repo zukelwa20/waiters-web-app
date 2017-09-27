@@ -1,11 +1,11 @@
-<form action="/" method="post">
+<center><form action="/waiter/{{name}}" method="post">
 <div class="optBtn">
-  <input type="checkbox" name="name" value="monday" id="">Monday
-  <input type="checkbox" name="name" value="tuesday" id=""> Tuesday
-  <input type="checkbox" name="name" value="wednesday" id="">Wsednesday
-  <input type="checkbox" name="name" value="thursday" id="">Thursday
-  <input type="checkbox" name="name" value="friday" id="">Friday
-  <input type="checkbox" name="name" value="saturday" id="">Saturday
-  <input type="checkbox" name="name" value="sunday" id="">Sunday
-  <button type="submit" name="" >Submit</button>
-</form>
+  <input type="checkbox" name="daysName" value="monday" id="" {{#if days.monday}}checked{{/if}}>Monday
+  <input type="checkbox" name="daysName" value="tuesday" id="" {{#if days.tuesday}}checked{{/if}} >Tuesday
+  <input type="checkbox" name="daysName" value="wednesday" id=""{{#if days.wednesday}}checked{{/if}}>Wednesday
+  <input type="checkbox" name="daysName" value="thursday" id="" {{#if days.thursday}}checked{{/if}}>Thursday
+  <input type="checkbox" name="daysName" value="friday" id=""{{#if days.friday}}checked{{/if}}>Friday
+  <input type="checkbox" name="daysName" value="saturday" id=""{{#if days.saturday}}checked{{/if}}>Saturday
+  <input type="checkbox" name="daysName" value="sunday" id="" {{#if days.sunday}}checked{{/if}}>Sunday<br><br>
+  <button type="submit">Submit</button>
+</form></center>

@@ -1,0 +1,28 @@
+{
+  "name": "waiters-web-app",
+  "version": "1.0.0",
+  "description": "waiters web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zukelwa20/waiters-web-app.git"
+  },
+  "author": "makho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zukelwa20/waiters-web-app/issues"
+  },
+  "homepage": "https://github.com/zukelwa20/waiters-web-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "express-flash": "0.0.2",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.11.13"
+  }
+}
