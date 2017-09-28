@@ -46,16 +46,10 @@ app.get("/",function(req, res){
   res.redirect('/waiter')
  })
 
-// app.get("/waiter/:username", function(req, res) {
-//   var username = req.params.username
-//   console.log(username);
-//   res.render("wait")
-  // res.redirect("waiter/" + username);
-// });
-
 app.get("/waiter", waiterRoute.showForm)
 app.get("/waiter/:username", waiterRoute.waiter)
 app.post("/waiter/:username", waiterRoute.waiterFun)
+app.get("/days", waiterRoute.adminFunction)
 
 
 //app.get('/',)
