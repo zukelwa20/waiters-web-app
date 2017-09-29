@@ -1,1 +1,57 @@
 <h3>Days which the waiter can work</h3>
+<form action="/days" method="post">
+<table>
+      <tr>
+      <th>monday</th>
+      <th>tuesday</th>
+      <th>wednesday</th>
+      <th>thursday</th>
+      <th>friday</th>
+      <th>saturday</th>
+      <th>sunday</th>
+      </tr>
+
+     <tr>
+       {{#each mon}}
+        <td>{{this}}</td>
+        {{/each}}
+       </tr>
+
+      <tr>
+         {{#each tues}}
+        <td>{{this}}</td>
+         {{/each}}
+      <tr>
+
+        <tr>
+       {{#each wen}}
+      <td>{{this}}</td>
+      {{/each}}
+     </tr>
+
+      <tr>
+       {{#each thurs}}
+      <td>{{this}}</td>
+      {{/each}}
+     </tr>
+
+     <tr>
+    {{#each fri}}
+    <td>{{this}}</td>
+     {{/each}}
+  </tr>
+
+     <tr>
+     {{#each sat}}
+    <td>{{this}}</td>
+     {{/each}}
+  </tr>
+
+     <tr>
+     {{#each sun}}
+    <td>{{this}}</td>
+    {{/each}}
+  </tr>
+
+  </table>
+</form>

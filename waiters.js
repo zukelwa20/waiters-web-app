@@ -86,29 +86,31 @@ module.exports = function(models) {
             var sunday = [];
 
 
-            var dayObj = {}
+            // var dayObj = {}
 
             resultsFromDataBase.forEach(function(day) {
                 var Days = day.days
                 var waiterName = day.name
 
-              if(typeof(Days) == 'object' ){
+              if(typeof(Days) == 'object'){
 
                 var shift = Object.keys(Days); //['monday', 'tuesday']
                 shift.forEach(function(daysPerWaiter) {
                   if (daysPerWaiter == 'monday') {
                     monday.push(waiterName)
+                    //console.log(monday);
 
                   }
                   if (daysPerWaiter == 'tuesday') {
                     tuesday.push(waiterName)
-
+                    //console.log(tuesday)
                   }
                   if(daysPerWaiter == 'wednesday'){
                     wednesday.push(waiterName)
                   }
                   if(daysPerWaiter == 'thursday'){
                     thursday.push(waiterName)
+
                   }
                    if(daysPerWaiter == 'friday'){
                      friday.push(waiterName)
@@ -134,7 +136,14 @@ module.exports = function(models) {
 
 
 
-            res.render('home')
+            res.render('admin', { mon: monday,
+                                  tues :tuesday,
+                                  wen: wednesday,
+                                   thur: thursday,
+                                    fri: friday,
+                                     sat : saturday,
+                                     sun: sunday
+                                   })
         })
 
     }
