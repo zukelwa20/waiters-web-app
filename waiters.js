@@ -3,8 +3,27 @@ module.exports = function(models) {
         res.render('home')
     }
 
+    var monday = [];
+    var tuesday = [];
+    var wednesday = [];
+    var thursday = [];
+    var friday = [];
+    var saturday = [];
+    var sunday = [];
 
-    const waiter = function(req, res, next) {
+  const colorFun = function(color){
+    if(color === 3){
+      return "color3";
+    }
+    if(color < 3){
+      return "color2";
+    }
+    if(color > 3){
+      return "color1";
+    }
+  }
+
+   const waiter = function(req, res, next) {
         var username = req.params.username;
         var days = req.body.daysName;
         console.log(days);
@@ -41,7 +60,6 @@ module.exports = function(models) {
     }
 
 
-
     const waiterFun = function(req, res) {
         var username = req.params.username;
         var days = req.body.daysName;
@@ -68,11 +86,8 @@ module.exports = function(models) {
         })
     }
 
-
-
-    const adminFunction = function(req, res) {
-
-        models.waiterDays.find({}, function(err, resultsFromDataBase) {
+  const adminFunction = function(req, res) {
+   models.waiterDays.find({}, function(err, resultsFromDataBase) {
             if (err) {
                 console.log(err);
             }
@@ -120,26 +135,42 @@ module.exports = function(models) {
                 // console.log(Object.keys(day.days))
             })
 
-
             res.render('admin', {
                 mon: monday,
+                colorChange: colorFun(monday.length),
                 tues: tuesday,
+                colorT: colorFun(tuesday.length),
                 wen: wednesday,
+                colorWed: colorFun(wednesday.length),
                 thurs: thursday,
+                colorThur: colorFun(thursday.length),
                 fri: friday,
+                colorFri: colorFun(friday.length),
                 sat: saturday,
-                sun: sunday
+                colorSat: colorFun(saturday.length),
+                sun: sunday,
+                colorSun: colorFun(sunday.length)
             })
         })
 
     }
 
-
+    var resetData = function(req, res){
+      models.waiterDays.remove({}, function(err, resetResults){
+        if(err){
+          console.log(err);
+        }
+        else{
+          return resetResults
+        }
+      })
+    }
 
     return {
         showForm,
         waiter,
         waiterFun,
-        adminFunction
+        adminFunction,
+        resetData
     }
 }

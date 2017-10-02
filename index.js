@@ -50,6 +50,7 @@ app.get("/waiter", waiterRoute.showForm)
 app.get("/waiter/:username", waiterRoute.waiter)
 app.post("/waiter/:username", waiterRoute.waiterFun)
 app.get("/days", waiterRoute.adminFunction)
+app.post("/days", waiterRoute.resetData)
 
 
 //app.get('/',)

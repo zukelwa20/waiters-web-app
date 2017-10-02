@@ -15,45 +15,43 @@
 </thead>
 <tbody>
   <ul>
-
-     <td>
-       
+     <td class="{{colorChange}}">
        {{#each mon}}
         <li>{{this}}</li>
         {{/each}}
       </td>
 
-      <td>
+      <td class="{{colorT}}">
          {{#each tues}}
         <li>{{this}}</li>
          {{/each}}
       </td>
 
-        <td>
+        <td class="{{colorWed}}">
        {{#each wen}}
       <li>{{this}}</li>
       {{/each}}
     </td>
 
-      <td>
+      <td class="{{colorThur}}">
        {{#each thurs}}
       <li>{{this}}</li>
       {{/each}}
     </td>
 
-     <td>
+     <td class="{{colorFri}}">
     {{#each fri}}
     <li>{{this}}</li>
      {{/each}}
   </td>
 
-     <td>
+     <td class="{{colorSat}}">
      {{#each sat}}
     <li>{{this}}</li>
      {{/each}}
   </td>
 
-     <td>
+     <td class="{{colorSun}}">
      {{#each sun}}
     <li>{{this}}</li>
     {{/each}}
@@ -61,5 +59,7 @@
 </ul>
 </tbody>
   </table>
+
+   <button type="submit">Reset</button>
 
 </form></center>
