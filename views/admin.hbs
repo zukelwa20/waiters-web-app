@@ -1,7 +1,9 @@
-<h3>Days which the waiter can work</h3>
+<center><h3>Days which the waiter can work</h3>
 <form action="/days" method="post">
+    <link rel="stylesheet" href="/css/style.css">
 <table>
-      <tr>
+  <thead>
+
       <th>monday</th>
       <th>tuesday</th>
       <th>wednesday</th>
@@ -9,49 +11,55 @@
       <th>friday</th>
       <th>saturday</th>
       <th>sunday</th>
-      </tr>
 
-     <tr>
+</thead>
+<tbody>
+  <ul>
+
+     <td>
+       
        {{#each mon}}
-        <td>{{this}}</td>
+        <li>{{this}}</li>
         {{/each}}
-       </tr>
+      </td>
 
-      <tr>
+      <td>
          {{#each tues}}
-        <td>{{this}}</td>
+        <li>{{this}}</li>
          {{/each}}
-      <tr>
+      </td>
 
-        <tr>
+        <td>
        {{#each wen}}
-      <td>{{this}}</td>
+      <li>{{this}}</li>
       {{/each}}
-     </tr>
+    </td>
 
-      <tr>
+      <td>
        {{#each thurs}}
-      <td>{{this}}</td>
+      <li>{{this}}</li>
       {{/each}}
-     </tr>
+    </td>
 
-     <tr>
+     <td>
     {{#each fri}}
-    <td>{{this}}</td>
+    <li>{{this}}</li>
      {{/each}}
-  </tr>
+  </td>
 
-     <tr>
+     <td>
      {{#each sat}}
-    <td>{{this}}</td>
+    <li>{{this}}</li>
      {{/each}}
-  </tr>
+  </td>
 
-     <tr>
+     <td>
      {{#each sun}}
-    <td>{{this}}</td>
+    <li>{{this}}</li>
     {{/each}}
-  </tr>
-
+  </td>
+</ul>
+</tbody>
   </table>
-</form>
+
+</form></center>

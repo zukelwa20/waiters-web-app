@@ -76,7 +76,6 @@ module.exports = function(models) {
             if (err) {
                 console.log(err);
             }
-
             var monday = [];
             var tuesday = [];
             var wednesday = [];
@@ -84,69 +83,57 @@ module.exports = function(models) {
             var friday = [];
             var saturday = [];
             var sunday = [];
-
-
-            // var dayObj = {}
+// console.log(resultsFromDataBase);
 
             resultsFromDataBase.forEach(function(day) {
                 var Days = day.days
                 var waiterName = day.name
 
-              if(typeof(Days) == 'object'){
+                if (typeof(Days) == 'object') {
 
-                var shift = Object.keys(Days); //['monday', 'tuesday']
-                shift.forEach(function(daysPerWaiter) {
-                  if (daysPerWaiter == 'monday') {
-                    monday.push(waiterName)
-                    //console.log(monday);
-
-                  }
-                  if (daysPerWaiter == 'tuesday') {
-                    tuesday.push(waiterName)
-                    //console.log(tuesday)
-                  }
-                  if(daysPerWaiter == 'wednesday'){
-                    wednesday.push(waiterName)
-                  }
-                  if(daysPerWaiter == 'thursday'){
-                    thursday.push(waiterName)
-
-                  }
-                   if(daysPerWaiter == 'friday'){
-                     friday.push(waiterName)
-                   }
-                   if(daysPerWaiter == 'saturday'){
-                     saturday.push(waiterName)
-                   }
-                   if(daysPerWaiter == 'sunday'){
-                     sunday.push(waiterName)
-                   }
-                })
-              }
-              // console.log(Object.keys(day.days))
+                    var shift = Object.keys(Days); //['monday', 'tuesday']
+                    shift.forEach(function(daysPerWaiter) {
+                        if (daysPerWaiter == 'monday') {
+                            monday.push(waiterName)
+                        }
+                        if (daysPerWaiter == 'tuesday') {
+                            tuesday.push(waiterName)
+                            //console.log(tuesday)
+                        }
+                        if (daysPerWaiter == 'wednesday') {
+                            wednesday.push(waiterName)
+                        }
+                        if (daysPerWaiter == 'thursday') {
+                            thursday.push(waiterName)
+                        }
+                        if (daysPerWaiter == 'friday') {
+                            friday.push(waiterName)
+                        }
+                        if (daysPerWaiter == 'saturday') {
+                            saturday.push(waiterName)
+                        }
+                        if (daysPerWaiter == 'sunday') {
+                            sunday.push(waiterName)
+                        }
+                    })
+                }
+                // console.log(Object.keys(day.days))
             })
 
-            // console.log(monday);
-            // console.log(tuesday);
-            // console.log(wednesday);
-            // console.log(thursday);
-            // console.log(friday);
-            // console.log(saturday);
-            // console.log(sunday);
 
-
-
-            res.render('admin', { mon: monday,
-                                  tues :tuesday,
-                                  wen: wednesday,
-                                   thur: thursday,
-                                    fri: friday,
-                                     sat : saturday,
-                                     sun: sunday
-                                   })
+            res.render('admin', {
+                mon: monday,
+                tues: tuesday,
+                wen: wednesday,
+                thurs: thursday,
+                fri: friday,
+                sat: saturday,
+                sun: sunday
+            })
         })
 
     }
+
 
 
     return {
